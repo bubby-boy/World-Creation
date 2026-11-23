@@ -20,8 +20,19 @@ jobs:
           java-version: '25'
           cache: maven
 
+      - name: Check project structure
+        run: |
+          echo "Checking plugin.yml..."
+          find . -name plugin.yml
+          test -f src/main/resources/plugin.yml
+
       - name: Build plugin
         run: mvn --batch-mode clean package
+
+      - name: Verify plugin.yml in JAR
+        run: |
+          jar tf target/WorldManager.jar
+          jar tf target/WorldManager.jar | grep -x plugin.yml
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
