@@ -1,0 +1,5 @@
+
+default-world-limit: 5
+
+# Change this to your lobby's actual world name.
+lobby-world: world
