@@ -1,0 +1,19 @@
+
+name: WorldManager
+version: 1.0.0
+main: com.roy.worldmanager.WorldManager
+api-version: '26.2'
+author: Roy
+
+commands:
+  worlds:
+    description: Open the World Manager
+    usage: /worlds
+
+  worldadmin:
+    description: Manage player world limits
+    permission: worldmanager.admin
+
+permissions:
+  worldmanager.admin:
+    default: op
